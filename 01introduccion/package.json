@@ -1,0 +1,15 @@
+{
+  "name": "01introduccion",
+  "version": "1.0.0",
+  "description": "primer proyecto",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "introduccion",
+    "node"
+  ],
+  "author": "jcevallos",
+  "license": "ISC"
+}
