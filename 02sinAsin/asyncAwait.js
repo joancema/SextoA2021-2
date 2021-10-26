@@ -55,7 +55,8 @@ async function buscarAutorPorId(id){
 
 
 libros.forEach( async (libro)=>{
-    const librox = await  buscarLibroPorId(1);
+    const librox = await  buscarLibroPorId(libro.id);
+    console.log(librox)
 })
 
 
