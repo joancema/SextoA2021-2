@@ -47,10 +47,15 @@ const crearProducto= async (req, res = response)=>{
     res.status(201).json(nuevoProducto);
 }
 const actualizarProducto= async (req, res=response)=>{
-
+    const {id} = req.params;
+    const { estado, ...data } =  req.body;
+    const productoModificado =  await Producto.findByIdAndUpdate(id,data, {new: true} )
+    res.json(productoModificado);
 }
 const borrarProducto= async (req, res = response)=>{
-
+    const {id} = req.params;
+    const productoBorrado =  await Producto.findByIdAndUpdate(id, {estado:false}, {new:true} );
+    res.json(productoBorrado);
 }
 
 module.exports = {
