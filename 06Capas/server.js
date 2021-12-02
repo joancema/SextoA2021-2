@@ -8,16 +8,25 @@ class Server
 {
     constructor()
     {
-        this.app = express();
+        this.app = express.Router();
+        this.router = express.Router();
+
         this.port = process.env.PORT;
 
         this.paths = {
-            productos: '/api/productos'
+            productos: '/api/productos',
+            categorias: '/api/categorias'
         }
 
         this.conectarDB();
         this.middlewares();
         this.routes();
+        this.router.use('/v1/inventario', this.app);
+
+
+        this._express = express().use(this.router);
+
+
 
     }
     async conectarDB(){
@@ -32,10 +41,11 @@ class Server
     }
     routes(){
         this.app.use(this.paths.productos, require('./routes/productos')   )
+        this.app.use(this.paths.categorias, require('./routes/categorias')   )
     }
 
     listen(){
-        this.app.listen(this.port, ()=>{
+        this._express.listen(this.port, ()=>{
             console.log(`Servidor ejecuntando en puerto ${this.port}`)
         })
     }
