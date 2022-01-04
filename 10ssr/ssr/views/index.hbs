@@ -1,0 +1,29 @@
+<div class="container">
+
+
+    <div class="row">
+
+
+        <table class="table table-striped">
+            <thead>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Costo</th>
+                <th >Opciones</th>
+            </thead>
+            {{#each productos}}
+            <tr>
+                <td>{{this.nombre}}</td>
+                <td>{{this.precio}}</td>
+                <td>{{this.costo}}</td>
+
+            </tr>
+            {{/each}}
+        </table>
+
+
+    </div>
+
+
+
+</div>
