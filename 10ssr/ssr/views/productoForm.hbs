@@ -2,7 +2,7 @@
     <br>
 
     <form action="/productoForm/producto/operar" method="POST">
-        <input type="text" name="_id" value={{producto._id}}>
+        <input type="hidden" name="_id" value={{producto._id}}>
         <div class="form-group">
             <label for="nombre">Nombre</label>
             <input type="text" class="form-control" id="nombre" name="nombre" value={{producto.nombre}}>
